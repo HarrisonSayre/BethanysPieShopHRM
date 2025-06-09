@@ -1,105 +1,78 @@
 ﻿// See https://aka.ms/new-console-template for more information
+/*int age = 23;
 
-/*Practice for block commments
-Example
+bool a = age == 23;
+
+Console.WriteLine("Age is 23: " a);
+
+bool b = age > 23;
+Console.WriteLine("Age is greater than 23: "+b);
+
+bool c = (age > 18) && (age < 65);
+Console.WriteLine("Age is between 18 and 65: " + c);
 */
 
-Console.WriteLine("Welcome to Bethany's Pie Shop HRM");
+//Console.WriteLine("Enter candidate age:");
+//int age = int.Parse(Console.ReadLine());
 
-//string name2 = Console.ReadLine();
+//if(age < 18)
+//{
+//    Console.WriteLine("Too young");
+//    Console.WriteLine("Send email to candidate");
+//}
+//else if (age > 65)
+//{
+//    Console.WriteLine("Too old");
+//    Console.WriteLine("Send email to candidate");
+//}
+//else
+//{
+//    Console.WriteLine("Let's get started");
+//}
 
-//string name_2 = Console.ReadLine();
+//switch(age)
+//{
+//    case < 18:
+//    case > 65:
+//        Console.WriteLine("Not in right age range");
+//        break;
+//    default:
+//        Console.WriteLine("Let's get started");
+//        break;
+//}
 
-//string Name_2 = Console.ReadLine();
+//DateTime today = DateTime.Now;
+//bool endOfMonthPaymentStarted = false;
 
-//string 2Name = Console.ReadLine();
+//if (today.Date.Day == 20)
+//{
+//    Console.WriteLine("Please start end of month  payments");
+//}
+//else if (today.Date.Day >= 25 && !endOfMonthPaymentStarted)
+//{
+//    Console.WriteLine("Payments will be late!");
+//}
+////No else needed
 
-var monthlyWage = 1234;
+Console.WriteLine("Choose the action you want to do: ");
+Console.WriteLine("1. Add employee");
+Console.WriteLine("2. Update employee");
+Console.WriteLine("3. Delete employee");
 
-//Two variables declared in one line
-int yearlyWage = 12, bonus = 1000;
+string selectedAction = Console.ReadLine();
 
-var isActive = true;
-
-var rating = 99.25;
-
-var numberOfEmployees = 300; //Now thati t's var will think it's int, not byte, and work
-
-int hoursWorked;
-
-hoursWorked = 125;
-
-hoursWorked = 148;
-
-//monthlyWage = true //Does not work because type safety.
-
-const double interestRate = 0.07;
-
-string firstName = "Bethany";
-string lastName = "Smith";
-string emptyString = "";
-
-Console.WriteLine("Please enter your name: ");
-
-//The following will accept the name
-string name = Console.ReadLine();
-
-double ratePerHour = 12.34;
-int numberOfHoursWorked = 165;
-
-double currentMonthWage = ratePerHour * numberOfHoursWorked + bonus;
-Console.WriteLine(currentMonthWage);
-
-ratePerHour += 3; //ratePerHour = ratePerHour+3
-
-if (currentMonthWage > 2000)
-    Console.WriteLine("Top Paid employee");
-
-//int numberOfEmployees = 15;
-numberOfEmployees--;
-
-bool a;
-int b;
-
-int intMaxValue = int.MaxValue;
-int minValue = int.MinValue;
-
-char userSelection = 'a';
-char upperVersion = char.ToUpper(userSelection);
-
-bool isDigit = char.IsDigit(upperVersion);
-bool isLetter = char.IsLetter(upperVersion);
-
-
-
-var hireDate = new DateTime(2022, 3, 28, 14, 30, 0);
-DateTime exitDate = new DateTime(2025, 12, 11);
-
-//DateTime invalidDate = new DateTime(2025, 15, 11);
-DateTime startDate = hireDate.AddDays(15);
-
-DateTime startHour = DateTime.Now;
-TimeSpan workTime = new TimeSpan(8, 35, 0);
-DateTime endHour = startHour.Add(workTime);
-Console.WriteLine(startHour.ToLongDateString());
-
-int numberofHoursWorked = 165;
-
-long veryLongMonth = numberofHoursWorked; //Works fine
-
-double d = 123456789.0;
-
-int x = (int)d;
-
-
-
-
-
-
-
-
-
-
-
-
-Console.ReadLine();
+switch (selectedAction)
+{
+    case "1":
+        Console.WriteLine("Adding new employee...");
+        break;
+    case "2":
+        Console.WriteLine("Updating employee...");
+        break;
+    case "3":
+        Console.WriteLine("Deleting employee...");
+        break;
+    default:
+        Console.WriteLine("Invalid input");
+        break;
+}
