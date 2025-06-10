@@ -1,5 +1,6 @@
 ﻿// See https://aka.ms/new-console-template for more information
-using BethanysPieShopHRM;
+using BethanysPieShopHRM.Accounting;
+using BethanysPieShopHRM.HR;
 using System.Text;
 
 int a = 42;
@@ -12,15 +13,45 @@ Console.WriteLine($"Value of a: {a} and value of copy of a: {aCopy}");
 Console.WriteLine("Create an employee");
 Console.WriteLine("-------------------------\n");
 
+
+Employee.taxRate = 0.02;
+
 Employee bethany = new Employee("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25, EmployeeType.Manager);
 
-string bethanyAsJson = bethany.ConvertToJson();
-Console.WriteLine(bethanyAsJson);
+bethany.PerformWork(7);
+bethany.ReceiveWage();
+bethany.DisplayEmployeeDetails();
 
-WorkTask task;
-task.description = "Bake pies";
-task.hours = 3;
-task.PerforWorkTask();
+
+//string bethanyAsJson = bethany.ConvertToJson();
+//Console.WriteLine(bethanyAsJson);
+
+//WorkTask task;
+//task.description = "Bake pies";
+//task.hours = 3;
+//task.PerforWorkTask();
+
+Console.WriteLine("Create an employee");
+Console.WriteLine("-------------------------\n");
+
+Employee george = new Employee("George", "Jones", "george@snowball.be", new DateTime(1984, 3, 28), null, EmployeeType.Research);
+
+george.PerformWork(12);
+george.ReceiveWage();
+george.DisplayEmployeeDetails();
+
+Employee.DisplayTaxRate();
+
+Employee mysteryEmployee = null;
+//mysteryEmployee.DisplayEmployeeDetails();
+
+
+Customer customer = new Customer();
+
+bethany.CalculateWage();
+
+Account account = new Account("1234567890");
+//account.AccountNumber = "9876542210";
 
 //string name = "bethany";
 //string anotherName = name;
