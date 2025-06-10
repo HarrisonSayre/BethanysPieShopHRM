@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class Employee
+    public class Employee :IEmployee
     {
         private string firstName;
         private string lastName;
@@ -23,6 +23,8 @@ namespace BethanysPieShopHRM.HR
         private const int minimalHoursWorkedUnit = 1;
 
         public static double taxRate = 0.15;
+
+        private Address address; 
 
         //private EmployeeType employeeType; //This gonna be changed somewhere, one assumes.
 
@@ -106,7 +108,14 @@ namespace BethanysPieShopHRM.HR
 
 
 
-
+        public Address Address
+        {
+            get { return address; }
+            set
+            {
+                address = value;
+            }
+        }
 
 
 
@@ -125,6 +134,17 @@ namespace BethanysPieShopHRM.HR
             BirthDay = bd;
             HourlyRate = rate ?? 10;
             //employeeType = emType;
+        }
+
+        public Employee(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate, string street, string houseNumber, string zip, string city)
+        {
+            FirstName = firstName;
+            LastName = lastName;
+            Email = email;
+            BirthDay = birthDay;
+            HourlyRate = hourlyRate ?? 10;
+
+            Address = new Address(street, houseNumber, zip, city);
         }
 
 
@@ -179,6 +199,11 @@ namespace BethanysPieShopHRM.HR
 
             Console.WriteLine($"Got a bonus of {bonus}!");
             return bonus;
+        }
+
+        public virtual void GiveBonus()
+        {
+            Console.WriteLine($"{FirstName} {LastName} recieved a generic bonus of $100");
         }
 
         //public int CalculateBbonusAndBonusTax(int bonus, ref int bonustax)
@@ -236,5 +261,10 @@ namespace BethanysPieShopHRM.HR
             return calculatedValue;
         }
 
+        public void GiveCompliment()
+        {
+            Console.WriteLine("Good job");
+            //throw new NotImplementedException();
+        }
     }
 }
