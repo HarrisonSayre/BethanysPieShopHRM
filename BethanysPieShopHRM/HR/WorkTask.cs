@@ -8,12 +8,12 @@ namespace BethanysPieShopHRM.HR
 {
     internal struct WorkTask
     {
-
-        public int hours;
         public string description;
+        public int hours;
 
-        public void PerforWorkTask()
+        public void PerformWorkTask()
         {
-            Console.WriteLine($"Task {description} of {hours} hours has been done.");        }
+            Console.WriteLine($"Task {description} of {hours} hour(s) has been performed.");
+        }
     }
 }

@@ -1,17 +1,18 @@
 using BethanysPieShopHRM.HR;
+using System;
+using Xunit;
 
 namespace BethanysPieShopHRM.Tests
 {
     public class EmployeeTests
     {
         [Fact]
-        public void PerformWork_Add_NumberOfHours()
+        public void PerformWork_Adds_NumberOfHours()
         {
             //Arrange
-            Employee employee = new Employee("bethany", "smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25);
+            Employee employee = new Employee("Bethany", "Smith", "bethany@snowball.be", new DateTime(1979, 1, 16), 25);
 
             int numberOfHours = 3;
-
             //Act
             employee.PerformWork(numberOfHours);
 

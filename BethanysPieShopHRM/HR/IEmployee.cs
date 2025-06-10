@@ -15,6 +15,5 @@ namespace BethanysPieShopHRM.HR
         void DisplayEmployeeDetails();
 
         void GiveCompliment();
-
     }
 }

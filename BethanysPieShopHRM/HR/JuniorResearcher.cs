@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class JuniorResearcher : Researcher
+    internal class JuniorResearcher: Researcher
     {
-        public JuniorResearcher(string first, string last, string em, DateTime bd, double? rate) : base(first, last, em, bd, rate)
+        public JuniorResearcher(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate) : base(firstName, lastName, email, birthDay, hourlyRate)
         {
         }
     }

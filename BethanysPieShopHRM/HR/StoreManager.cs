@@ -6,13 +6,10 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class StoreManager : Employee
+    internal class StoreManager: Employee
     {
-
-        public StoreManager(string first, string last, string em, DateTime bd, double? rate)
-            : base(first, last, em, bd, rate)
+        public StoreManager(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate) : base(firstName, lastName, email, birthDay, hourlyRate)
         {
-
         }
     }
 }

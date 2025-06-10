@@ -8,7 +8,8 @@ namespace BethanysPieShopHRM.HR
 {
     internal class Researcher : Employee
     {
-        public Researcher(string first, string last, string em, DateTime bd, double? rate) : base(first, last, em, bd, rate)
+
+        public Researcher(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate) : base(firstName, lastName, email, birthDay, hourlyRate)
         {
         }
 
@@ -40,6 +41,5 @@ namespace BethanysPieShopHRM.HR
                 Console.WriteLine($"Researcher {FirstName} {LastName} is working still on a new pie taste!");
             }
         }
-
     }
 }

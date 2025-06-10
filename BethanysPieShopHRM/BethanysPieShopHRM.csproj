@@ -8,12 +8,12 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
     <Reference Include="BethanysPieShopHRM.Logic">
-      <HintPath>..\..\..\..\Documents\Comp Sci\LaunchCode\c-sharp-10-fundamentals\09\demos\Assets\BethanysPieShopHRM.Logic.dll</HintPath>
+      <HintPath>..\..\..\..\Documents\Comp Sci\LaunchCode\c-sharp-10-fundamentals\13\demos\Assets\BethanysPieShopHRM.Logic.dll</HintPath>
     </Reference>
   </ItemGroup>
 

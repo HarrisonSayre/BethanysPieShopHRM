@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.Accounting
 {
-    public class Customer
+    internal class Customer
     {
         private string customerId;
         private string name;

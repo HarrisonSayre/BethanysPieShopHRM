@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BethanysPieShopHRM.HR
 {
-    internal class Developer : Employee
+    internal class Developer: Employee
     {
         private string currentProject;
 
@@ -19,7 +19,7 @@ namespace BethanysPieShopHRM.HR
             }
         }
 
-        public Developer(string first, string last, string em, DateTime bd, double? rate) : base(first, last, em, bd, rate)
+        public Developer(string firstName, string lastName, string email, DateTime birthDay, double? hourlyRate) : base(firstName, lastName, email, birthDay, hourlyRate)
         {
         }
     }
