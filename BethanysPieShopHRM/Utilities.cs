@@ -199,7 +199,7 @@ namespace BethanysPieShopHRM
         {
             //Console.WriteLine("Got in here");
             string path = $"{directory}{fileName}";
-            //Console.WriteLine(path);
+            //loaConsole.WriteLine(path);
             StringBuilder sb = new StringBuilder();
             foreach (Employee employee in employees)
             {
