@@ -3,6 +3,7 @@ using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -10,35 +11,120 @@ namespace BethanysPieShopHRM.HR
 {
     internal class Employee
     {
-        public string firstName;
-        public string lastName;
-        public string email;
+        private string firstName;
+        private string lastName;
+        private string email;
 
-        //        public int age;
-        public int numberOfHoursWorked;
-        public double wage;
-        public double? hourlyRate;
+        private int numberOfHoursWorked;
+        private double wage;
+        private double? hourlyRate;
 
-        public DateTime birthDay;
-
-        const int minimalHoursWorkedUnit = 1;
-
-        public EmployeeType employeeType;
+        private DateTime birthDay;
+        private const int minimalHoursWorkedUnit = 1;
 
         public static double taxRate = 0.15;
 
-        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0, EmployeeType.StoreManager)
+        //private EmployeeType employeeType; //This gonna be changed somewhere, one assumes.
+
+
+        public string FirstName
+        {
+            get { return firstName; }
+            set
+            {
+                firstName = value;
+            }
+        }
+
+        public string LastName
+        {
+            get { return lastName; }
+            set
+            {
+                lastName = value;
+            }
+        }
+
+        public string Email
+        {
+            get { return email; }
+            set
+            {
+                email = value;
+            }
+        }
+
+        public int NumberOfHoursWorked
+        {
+            get { return numberOfHoursWorked; }
+            protected set
+            {
+                numberOfHoursWorked = value;
+            }
+        }
+
+        public double Wage
+        {
+            get { return wage; }
+            private set
+            {
+                wage = value;
+            }
+        }
+
+        public double? HourlyRate
+        {
+            get { return hourlyRate; }
+            set
+            {
+                if (hourlyRate < 0)//this should always be higher than 0
+                {
+                    hourlyRate = 0;
+                }
+                else
+                {
+                    hourlyRate = value;
+
+                }
+            }
+        }
+
+        public DateTime BirthDay
+        {
+            get { return birthDay; }
+            set
+            {
+                birthDay = value;
+            }
+        }
+
+        //public EmployeeType EmployeeType
+        //{
+
+
+        //}
+
+
+
+
+
+
+
+
+
+
+        public Employee(string first, string last, string em, DateTime bd) : this(first, last, em, bd, 0)
         {
         }
 
-        public Employee(string first, string last, string em, DateTime bd, double? rate, EmployeeType emType)
+        public Employee(string first, string last, string em, DateTime bd, double? rate)
         {
-            firstName = first;
-            lastName = last;
-            email = em;
-            birthDay = bd;
-            hourlyRate = rate ?? 10;
-            employeeType = emType;
+            FirstName = first;
+            LastName = last;
+            Email = em;
+            BirthDay = bd;
+            HourlyRate = rate ?? 10;
+            //employeeType = emType;
         }
 
 
@@ -58,14 +144,14 @@ namespace BethanysPieShopHRM.HR
         {
             double wageBeforeTax = 0.0;
 
-            if (employeeType == EmployeeType.Manager)
-            {
-                Console.WriteLine($"An extra was added to the wage since {firstName} is a manager!");
-                wageBeforeTax = numberOfHoursWorked + hourlyRate.Value * 1.25;
-            }
-            else {
+            //if (employeeType == EmployeeType.Manager)
+            //{
+            //    Console.WriteLine($"An extra was added to the wage since {firstName} is a manager!");
+            //    wageBeforeTax = numberOfHoursWorked + hourlyRate.Value * 1.25;
+            //}
+            //else {
                 wageBeforeTax = numberOfHoursWorked * hourlyRate.Value;
-            }
+            //}
 
             double taxAmount = wageBeforeTax * taxRate;
 
